@@ -2,7 +2,7 @@
 
 const apiKey = '7e04a867561611c9d92b2e344ce5ac39';
 
-//Object captures all location data
+// Object captures all location data
 
 let locationData = {
     city: '',

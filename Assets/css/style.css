@@ -1,0 +1,85 @@
+main {
+    display: flex;
+    width: 100%;
+    height: 500px;
+}
+
+header {
+    background-image: linear-gradient(to right, #465ab8 , #261360);
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h2.forecast {
+    padding: 10px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+input {
+    width: 90%;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px #aeaeae solid;
+}
+
+button {
+    width: 90%;
+    background-color:#6991e3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.left-container {
+    width: 25%;
+    height: 100%;
+    padding: 10px;   
+}
+
+.right-parent-container {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.right-top-child-container {
+    height:250px;
+    border: 2px #aeaeae solid;
+    border-radius: 5px;
+    margin-top:10px;
+    width: 95%;
+    padding:10px;
+}
+
+.right-bottom-child-container {
+    height: 250px;
+    width: 95%;
+}
+
+.five-day-parent-container {
+    display: flex;
+    justify-content:space-between;
+}
+
+.five-day-child-container {
+    flex-direction:row;
+    background-color: #323d4f;
+    color: white;   
+    width: 18%; 
+    height: 200px;
+    padding: 10px;
+    border-radius: 5px;
+}
