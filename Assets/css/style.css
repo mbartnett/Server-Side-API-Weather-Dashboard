@@ -4,6 +4,7 @@
 
 * {
     font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
 }
 
 main {
@@ -49,6 +50,7 @@ h4 {
 
 p {
     margin: 10px 0;
+    font-size: 14px;
     font-weight: 400;
 }
 
@@ -134,7 +136,7 @@ button.results {
 
 /* Media queries */
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
    main {
         display: flex;
         flex-direction: column;
