@@ -10,11 +10,13 @@
 main {
     display: flex;
     width: 100%;
-    height: 500px;
+    height: 100vh;
+    background-color: #efefef;
 }
 
 header {
-    background-image: linear-gradient(to right, #465ab8 , #261360);
+    background-color: #6991e3;
+    /*background-image: linear-gradient(to right, #6991e3 , #261360);*/
     color: white;
     text-align: center;
 }
@@ -29,6 +31,12 @@ h2 {
     font-weight: 800;
     line-height: 28px;
     margin: 5px 10px;
+}
+
+h2 span {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 28px;
 }
 
 h2.forecast {
@@ -110,6 +118,7 @@ button.results {
     margin-top:10px;
     width: 95%;
     padding:10px;
+    background-color: white;
 }
 
 .right-bottom-child-container {
@@ -126,7 +135,7 @@ button.results {
     display: flex;
     flex-direction:column;
     justify-content: center;
-    background-color: #323d4f;
+    background-color: #6991e3;
     color: white;   
     width: 18%; 
     height: 220px;
