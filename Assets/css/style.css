@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+/* Universal styles */
+
+* {
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
 main {
     display: flex;
     width: 100%;
@@ -12,23 +20,42 @@ header {
 
 h1 {
     font-size: 36px;
+    font-weight: 800;
 }
 
 h2 {
     font-size: 28px;
+    font-weight: 800;
+    line-height: 34px;
 }
 
 h2.forecast {
     padding: 10px;
+    font-weight: 800;
 }
 
 h3 {
     font-size: 18px;
+    font-weight: 700;
 }
+
+h4 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 15px;
+
+}
+
+p {
+    margin: 10px 0;
+    font-weight: 400;
+}
+
+/* Form elements */
 
 input {
     width: 90%;
-    margin: 5px;
+    margin: 10px;
     border-radius: 5px;
     padding: 5px;
     border: 1px #aeaeae solid;
@@ -40,13 +67,29 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
-    margin: 5px;
+    margin: 10px;
 }
+
+button.results {
+    width: 90%;
+    background-color:#aeaeae;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+/* Container elements */
 
 .left-container {
     width: 25%;
     height: 100%;
-    padding: 10px;   
+    padding: 10px;
+}
+
+.left-results-container {
+    border-top: 1px #aeaeae solid;
+    border-width: 90%;
 }
 
 .right-parent-container {
@@ -57,7 +100,7 @@ button {
 
 .right-top-child-container {
     height:250px;
-    border: 2px #aeaeae solid;
+    border: 1px #aeaeae solid;
     border-radius: 5px;
     margin-top:10px;
     width: 95%;
@@ -82,4 +125,60 @@ button {
     height: 200px;
     padding: 10px;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 750px) {
+    .left-container {
+        width: 20%;
+    }
+
+    .right-parent-container {
+         width: 80%;
+    }
+    
+    .five-day-parent-container {
+        flex-direction: column;
+    }
+    
+    .five-day-child-container {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 620px) {
+   main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .left-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .right-parent-container {
+        flex-direction: column; 
+        width: 100%;
+    }
+
+    .right-top-child-container {
+        width: 100%;
+    }
+
+    .right-bottom-child-container {
+        width: 100%;
+    }
+    
+    .five-day-parent-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .five-day-child-container {
+        width: 100%;
+        margin: 10px 0;
+    }
 }
