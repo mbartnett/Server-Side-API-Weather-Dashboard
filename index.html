@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/reset.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
 <body>
 <header>
-    <h1>Weather Dashboard 🌤</h1>
+    <h1>Weather Dashboard</h1>
 </header>    
 <main>
 <section class="left-container">
     <h2>Search for a City:</h2>
-    <input type="text" placeholder="San Diego" name="search">
+    <input type="text" placeholder="Austin" name="search">
     <button type="submit">Search</button>
         <section class="left-results-container">
-            <button class="results" type="text">Atlanta</button>
+            <button class="results" type="text">Galveston</button>
         </section>
 </section>
 <section class="right-parent-container">
     <section class="right-top-child-container">
-    <h2><span id="current-city">CITY</span>, <span id="current-date">(DATE)</span> <span id="current-emoji">EMOJI</span></h2>
-    <h4>Temp: <span id="current-temp"></span></h4>
-    <h4>Wind: <span id="current-wind"></span></h4>
-    <h4>Humidity: <span id="current-humidity"></span></h4>
+        <h2><span id="current-city">CITY</span>, <span id="current-date">(DATE)</span> <span id="current-emoji">EMOJI</span></h2>
+        <h4>Temp: <span id="current-temp"></span></h4>
+        <h4>Wind: <span id="current-wind"></span></h4>
+        <h4>Humidity: <span id="current-humidity"></span></h4>
     </section>
     <section class="right-bottom-child-container">
         <h2 class="forecast">5-Day Forecast:</h2>
@@ -71,13 +71,7 @@
 </section>
 </main>
 <footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous"
-    ></script>
-    <script src="/assets/js/script.js"></script>    
+    <script src="./assets/js/script.js"></script>    
 </footer>
 </body>
 </html>

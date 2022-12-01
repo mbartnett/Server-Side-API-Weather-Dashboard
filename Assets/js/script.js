@@ -1,6 +1,12 @@
-// Variable stores the API key
+// API stuff
 
 const apiKey = '7e04a867561611c9d92b2e344ce5ac39';
+const apiURL = '"http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;'
+fetch(apiURL)
+
+// Elements by ID
+
+const searchText = document.getElementById('search-text');
 
 const currentDate = document.getElementById('current-date');
 const currentCity = document.getElementById('current-city');
@@ -18,14 +24,3 @@ let locationData = {
     coordinates: ''
 };
 
-// Stores user input
-
-let userSubmittedInfo;
-
-// Generates a URL including the user submitted info and the API key
-
-var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
-
-// Fetch 
-
-fetch(queryURL)
