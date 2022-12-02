@@ -3,7 +3,6 @@
 const apiKey = '7e04a867561611c9d92b2e344ce5ac39';
 const submitBtn = document.getElementById('submit')
 let currentSection = document.getElementById('current-section');
-let fiveDaySection = document.getElementById('five-day-section');
 const searchText = document.getElementById('search-text');
 submitBtn.addEventListener('click', getWeather)
 
@@ -33,23 +32,7 @@ function displayWeather(cityName) {
                 .then(function (fiveDayWeather) {
                     for (i = 2; i < fiveDayWeather.list.length; i = i + 8) {
                         console.log(fiveDayWeather.list[i])
-                        fiveDaySection.innerHTML = 
-                    `<section class="five-day-child-container">
-                        <h3>${fiveDayWeather[0].dt}</h3>
-                        <p></p>
-                        <p>Temp:</p>
-                        <p>Wind:</p>
-                        <p>Humidity:</p>            
-                        </section>
-                    <section class="five-day-child-container">
-                        <h3>DATE</h3>
-                        <p>EMOJI</p>
-                        <p>Temp:</p>
-                        <p>Wind:</p>
-                        <p>Humidity:</p>                   
-                    </section>`
                     }
                 })
         })
 }
-
