@@ -21,8 +21,8 @@ function displayWeather(cityName) {
         .then(function (currentWeather) {
             console.log(currentWeather)
             let iconURL = `https://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png`;
-            currentSection.innerHTML = 
-            `<h2><span id="current-city">${currentWeather.name}</span>, <span id="current-date">${(currentWeather.dt)}</span> <img style="display:inline-block;" src="${iconURL}" /></h2>
+            currentSection.innerHTML =
+                `<h2><span id="current-city">${currentWeather.name}</span>, <span id="current-date">${(currentWeather.dt * 1000)}</span> <img style="display:inline-block;" src="${iconURL}" /></h2>
             <h4>Temp: <span id="current-temp">${currentWeather.main.temp}</span></h4>
             <h4>Wind: <span id="current-wind">${currentWeather.wind.speed} mph</span></h4>
             <h4>Humidity: <span id="current-humidity">${currentWeather.main.humidity}</span></h4>`
@@ -39,8 +39,8 @@ function displayWeather(cityName) {
                         let fiveIconURL2 = `https://openweathermap.org/img/w/${fiveDayWeather.list[2].weather[0].icon}.png`;
                         let fiveIconURL3 = `https://openweathermap.org/img/w/${fiveDayWeather.list[3].weather[0].icon}.png`;
                         let fiveIconURL4 = `https://openweathermap.org/img/w/${fiveDayWeather.list[4].weather[0].icon}.png`;
-                        fiveDaySection.innerHTML = 
-                    `<section class="five-day-child-container">
+                        fiveDaySection.innerHTML =
+                            `<section class="five-day-child-container">
                         <h3>${fiveDayWeather.list[0].dt}</h3>
                         <p><img style="display:inline-block;" src="${fiveIconURL0}" /></p>
                         <p>Temp: ${fiveDayWeather.list[0].main.temp}</p>
