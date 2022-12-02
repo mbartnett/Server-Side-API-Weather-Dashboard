@@ -22,7 +22,7 @@ function displayWeather(cityName) {
             console.log(currentWeather)
             let iconURL = `https://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png`;
             currentSection.innerHTML =
-                `<h2><span id="current-city">${currentWeather.name}</span>, <span id="current-date">${(currentWeather.dt * 1000)}</span> <img style="display:inline-block;" src="${iconURL}" /></h2>
+                `<h2><span id="current-city">${currentWeather.name}</span>, <span id="current-date">${dayjs.unix(currentWeather.dt).format('MMMM D, YYYY')}</span> <img style="display:inline-block;" src="${iconURL}" /></h2>
             <h4>Temp: <span id="current-temp">${currentWeather.main.temp}</span></h4>
             <h4>Wind: <span id="current-wind">${currentWeather.wind.speed} mph</span></h4>
             <h4>Humidity: <span id="current-humidity">${currentWeather.main.humidity}</span></h4>`
@@ -41,35 +41,35 @@ function displayWeather(cityName) {
                         let fiveIconURL4 = `https://openweathermap.org/img/w/${fiveDayWeather.list[4].weather[0].icon}.png`;
                         fiveDaySection.innerHTML =
                             `<section class="five-day-child-container">
-                        <h3>${fiveDayWeather.list[0].dt}</h3>
+                        <h3>${dayjs(fiveDayWeather.list[0].dt_txt).format('MMMM D, YYYY')}</h3>
                         <p><img style="display:inline-block;" src="${fiveIconURL0}" /></p>
                         <p>Temp: ${fiveDayWeather.list[0].main.temp}</p>
                         <p>Wind: ${fiveDayWeather.list[0].wind.speed} mph</p>
                         <p>Humidity: ${fiveDayWeather.list[0].main.humidity}</p>            
                         </section>
                     <section class="five-day-child-container">
-                        <h3>${fiveDayWeather.list[1].dt}</h3>
+                        <h3>${dayjs(fiveDayWeather.list[1].dt_txt).format('MMMM D, YYYY')}</h3>
                         <p><img style="display:inline-block;" src="${fiveIconURL1}" /></p>
                         <p>Temp: ${fiveDayWeather.list[1].main.temp}</p>
                         <p>Wind: ${fiveDayWeather.list[1].wind.speed} mph</p>
                         <p>Humidity: ${fiveDayWeather.list[1].main.humidity}</p>                  
                     </section>
                     <section class="five-day-child-container">
-                        <h3>${fiveDayWeather.list[2].dt}</h3>
+                        <h3>${dayjs(fiveDayWeather.list[2].dt_txt).format('MMMM D, YYYY')}</h3>
                         <p><img style="display:inline-block;" src="${fiveIconURL2}" /></p>
                         <p>Temp: ${fiveDayWeather.list[2].main.temp}</p>
                         <p>Wind: ${fiveDayWeather.list[2].wind.speed} mph</p>
                         <p>Humidity: ${fiveDayWeather.list[2].main.humidity}</p>                  
                     </section>
                     <section class="five-day-child-container">
-                        <h3>${fiveDayWeather.list[3].dt}</h3>
+                        <h3>${dayjs(fiveDayWeather.list[3].dt_txt).format('MMMM D, YYYY')}</h3>
                         <p><img style="display:inline-block;" src="${fiveIconURL3}" /></p>
                         <p>Temp: ${fiveDayWeather.list[3].main.temp}</p>
                         <p>Wind: ${fiveDayWeather.list[3].wind.speed} mph</p>
                         <p>Humidity: ${fiveDayWeather.list[3].main.humidity}</p>                 
                     </section>
                     <section class="five-day-child-container">
-                        <h3>${fiveDayWeather.list[4].dt}</h3>
+                        <h3>${dayjs(fiveDayWeather.list[4].dt_txt).format('MMMM D, YYYY')}</h3>
                         <p><img style="display:inline-block;" src="${fiveIconURL4}" /></p>
                         <p>Temp: ${fiveDayWeather.list[4].main.temp}</p>
                         <p>Wind: ${fiveDayWeather.list[4].wind.speed} mph</p>
