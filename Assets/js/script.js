@@ -12,8 +12,6 @@ function getWeather() {
     displayWeather(cityName);
 }
 
-
-
 function displayWeather(cityName) {
     let dateJS = dayjs().format('M/D/YYY')
     const apiURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey + "&units=imperial";
