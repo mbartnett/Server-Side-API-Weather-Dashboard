@@ -48,7 +48,7 @@ function displayWeather(cityName) {
                         <p>Humidity: ${fiveDayWeather.list[0].main.humidity}</p>            
                         </section>
                     <section class="five-day-child-container">
-                        <h3>${dayjs(fiveDayWeather.list[1].dt_txt).format('MMMM D, YYYY')}</h3>
+                        <h3>${dayjs.unix(fiveDayWeather.list[1].dt).format('MMMM D, YYYY')}</h3>
                         <p><img style="display:inline-block;" src="${fiveIconURL1}" /></p>
                         <p>Temp: ${fiveDayWeather.list[1].main.temp}</p>
                         <p>Wind: ${fiveDayWeather.list[1].wind.speed} mph</p>
