@@ -35,9 +35,9 @@ function displayWeather(cityName) {
                         console.log(fiveDayWeather.list[i])
                         fiveDaySection.innerHTML = 
                     `<section class="five-day-child-container">
-                        <h3>${fiveDayWeather[0].dt}</h3>
-                        <p></p>
-                        <p>Temp:</p>
+                        <h3>${fiveDayWeather.dt}</h3>
+                        <p>EMOJI</p>
+                        <p>Temp: ${fiveDayWeather[0].main.temp}</p>
                         <p>Wind:</p>
                         <p>Humidity:</p>            
                         </section>
@@ -47,7 +47,28 @@ function displayWeather(cityName) {
                         <p>Temp:</p>
                         <p>Wind:</p>
                         <p>Humidity:</p>                   
-                    </section>`
+                    </section>
+                        <section class="five-day-child-container">
+                        <h3>DATE</h3>
+                        <p>EMOJI</p>
+                        <p>Temp:</p>
+                        <p>Wind:</p>
+                        <p>Humidity:</p>                   
+                    </section>
+                    <section class="five-day-child-container">
+                        <h3>DATE</h3>
+                        <p>EMOJI</p>
+                        <p>Temp:</p>
+                        <p>Wind:</p>
+                        <p>Humidity:</p>                   
+                    </section>
+                <section class="five-day-child-container">
+                        <h3>DATE</h3>
+                        <p>EMOJI</p>
+                        <p>Temp:</p>
+                        <p>Wind:</p>
+                        <p>Humidity:</p>                   
+                </section>`
                     }
                 })
         })
