@@ -14,6 +14,7 @@ function getWeather() {
 
 function displayWeather(cityName) {
     const apiURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey + "&units=imperial";
+    let emoji = "";
     fetch(apiURL)
         .then(function (response) {
             return response.json()
@@ -22,7 +23,7 @@ function displayWeather(cityName) {
             console.log(currentWeather)
             let iconURL = `https://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png`;
             currentSection.innerHTML =
-                `<h2><span id="current-city">${currentWeather.name}</span>, <span id="current-date">${dayjs.unix(currentWeather.dt).format('MMMM D, YYYY')}</span> <img style="display:inline-block;" src="${iconURL}" /></h2>
+                `<h2><span id="current-city">${currentWeather.name}</span>, <span id="current-date">${dayjs.unix(currentWeather.dt).format('MMMM D, YYYY')}</span> ${emoji} <img style="display:inline-block;" src="${iconURL}" /></h2>
             <h4>Temp: <span id="current-temp">${currentWeather.main.temp}</span></h4>
             <h4>Wind: <span id="current-wind">${currentWeather.wind.speed} mph</span></h4>
             <h4>Humidity: <span id="current-humidity">${currentWeather.main.humidity}</span></h4>`
@@ -80,3 +81,25 @@ function displayWeather(cityName) {
         })
 }
 
+let emoji = currentWeather.weather[0];
+if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "01d" || "01n") {
+    emoji = "☀️";
+}
+
+// } else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "02d" || "02n") {
+//     return "🌤";
+// } else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "03d" || "03n") {
+//     return "☁️";
+// } else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "04d" || "04n") {
+//     return "☁️";
+// } else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "09d" || "09n") {
+//     return "🌧";
+// } else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "10d" || "10n") {
+//     return "🌧";
+// } else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "11d" || "11n") {
+//     return "⛈";
+// } else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "13d" || "13n") {
+//     return "❄️";
+// } else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "50d" || "50n") {
+//     return "💦";
+// }
