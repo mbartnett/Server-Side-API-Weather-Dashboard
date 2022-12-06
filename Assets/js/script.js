@@ -35,10 +35,10 @@ function displayWeather(cityName) {
                     for (i = 2; i < fiveDayWeather.list.length; i = i + 8) {
                         console.log(fiveDayWeather.list[i])
                         let fiveIconURL0 = `https://openweathermap.org/img/w/${fiveDayWeather.list[0].weather[0].icon}.png`;
-                        let fiveIconURL1 = `https://openweathermap.org/img/w/${fiveDayWeather.list[1].weather[0].icon}.png`;
-                        let fiveIconURL2 = `https://openweathermap.org/img/w/${fiveDayWeather.list[2].weather[0].icon}.png`;
-                        let fiveIconURL3 = `https://openweathermap.org/img/w/${fiveDayWeather.list[3].weather[0].icon}.png`;
-                        let fiveIconURL4 = `https://openweathermap.org/img/w/${fiveDayWeather.list[4].weather[0].icon}.png`;
+                        let fiveIconURL1 = `https://openweathermap.org/img/w/${fiveDayWeather.list[8].weather[0].icon}.png`;
+                        let fiveIconURL2 = `https://openweathermap.org/img/w/${fiveDayWeather.list[16].weather[0].icon}.png`;
+                        let fiveIconURL3 = `https://openweathermap.org/img/w/${fiveDayWeather.list[24].weather[0].icon}.png`;
+                        let fiveIconURL4 = `https://openweathermap.org/img/w/${fiveDayWeather.list[32].weather[0].icon}.png`;
                         fiveDaySection.innerHTML =
                         `<section class="five-day-child-container">
                         <h3>${dayjs(fiveDayWeather.list[0].dt_txt).format('MMMM D, YYYY')}</h3>
@@ -48,28 +48,28 @@ function displayWeather(cityName) {
                         <p>Humidity: ${fiveDayWeather.list[0].main.humidity}</p>            
                         </section>
                     <section class="five-day-child-container">
-                        <h3>${dayjs(fiveDayWeather.list[1].dt_txt).format('MMMM D, YYYY')}</h3>
+                        <h3>${dayjs(fiveDayWeather.list[8].dt_txt).format('MMMM D, YYYY')}</h3>
                         <p><img style="display:inline-block;" src="${fiveIconURL1}" /></p>
                         <p>Temp: ${fiveDayWeather.list[1].main.temp}</p>
                         <p>Wind: ${fiveDayWeather.list[1].wind.speed} mph</p>
                         <p>Humidity: ${fiveDayWeather.list[1].main.humidity}</p>                  
                     </section>
                     <section class="five-day-child-container">
-                        <h3>${dayjs(fiveDayWeather.list[2].dt_txt).format('MMMM D, YYYY')}</h3>
+                        <h3>${dayjs(fiveDayWeather.list[16].dt_txt).format('MMMM D, YYYY')}</h3>
                         <p><img style="display:inline-block;" src="${fiveIconURL2}" /></p>
                         <p>Temp: ${fiveDayWeather.list[2].main.temp}</p>
                         <p>Wind: ${fiveDayWeather.list[2].wind.speed} mph</p>
                         <p>Humidity: ${fiveDayWeather.list[2].main.humidity}</p>                  
                     </section>
                     <section class="five-day-child-container">
-                        <h3>${dayjs(fiveDayWeather.list[3].dt_txt).format('MMMM D, YYYY')}</h3>
+                        <h3>${dayjs(fiveDayWeather.list[24].dt_txt).format('MMMM D, YYYY')}</h3>
                         <p><img style="display:inline-block;" src="${fiveIconURL3}" /></p>
                         <p>Temp: ${fiveDayWeather.list[3].main.temp}</p>
                         <p>Wind: ${fiveDayWeather.list[3].wind.speed} mph</p>
                         <p>Humidity: ${fiveDayWeather.list[3].main.humidity}</p>                 
                     </section>
                     <section class="five-day-child-container">
-                        <h3>${dayjs(fiveDayWeather.list[4].dt_txt).format('MMMM D, YYYY')}</h3>
+                        <h3>${dayjs(fiveDayWeather.list[32].dt_txt).format('MMMM D, YYYY')}</h3>
                         <p><img style="display:inline-block;" src="${fiveIconURL4}" /></p>
                         <p>Temp: ${fiveDayWeather.list[4].main.temp}</p>
                         <p>Wind: ${fiveDayWeather.list[4].wind.speed} mph</p>
