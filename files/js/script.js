@@ -1,10 +1,6 @@
 // API key
 const apiKey = '7e04a867561611c9d92b2e344ce5ac39';
 
-// Event listener for weather functions
-
-submitBtn.addEventListener('click', getWeather)
-
 // Variables
 
 const submitBtn = document.getElementById('submit')
@@ -17,6 +13,10 @@ let results = document.querySelector("#results");
 let resultsContainer = document.querySelector(".left-results-container");
 const rule = document.querySelector("#rule");
 let cityNames = [];
+
+// Event listener for weather functions
+
+submitBtn.addEventListener('click', getWeather)
 
 // Function that creates a button and stores data for a queried city's name
 
@@ -54,7 +54,7 @@ function getWeather() {
 }
 
 function displayWeather(cityName) {
-    const apiURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey + "&units=imperial";
+    const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey + "&units=imperial";
     fetch(apiURL)
         .then(function (response) {
             return response.json()
@@ -72,7 +72,7 @@ function displayWeather(cityName) {
             <h4><b>Temp:</b> <span id="current-temp">${currentWeather.main.temp}</span></h4>
             <h4><b>Wind:</b> <span id="current-wind">${currentWeather.wind.speed} mph</span></h4>
             <h4><b>Humidity:</b> <span id="current-humidity">${currentWeather.main.humidity}</span></h4>`
-            const fiveDayURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${currentWeather.coord.lat}&lon=${currentWeather.coord.lon}&appid=${apiKey}&units=imperial`
+            const fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${currentWeather.coord.lat}&lon=${currentWeather.coord.lon}&appid=${apiKey}&units=imperial`
             fetch(fiveDayURL)
                 .then(function (response) {
                     return response.json()
