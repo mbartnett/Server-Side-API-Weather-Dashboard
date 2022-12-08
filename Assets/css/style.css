@@ -93,6 +93,14 @@ button.results {
     margin: 10px;
 }
 
+#rule {
+    display: block;
+    color:#aeaeae;
+    width: 100%;
+    height: 1px;
+    
+}
+
 /* Container elements */
 
 .left-container {
@@ -102,7 +110,7 @@ button.results {
 }
 
 .left-results-container {
-    border-top: 1px #aeaeae solid;
+    /*border-top: 1px #aeaeae solid;*/
     border-width: 90%;
 }
 

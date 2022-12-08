@@ -7,19 +7,51 @@ const submitBtn = document.getElementById('submit')
 let currentSection = document.getElementById('current-section');
 let fiveDaySection = document.getElementById('five-day-section');
 const searchText = document.getElementById('search-text');
+
 submitBtn.addEventListener('click', getWeather)
+
+let resultsContainer = document.querySelector(".left-results-container");
 
 const rightTop = document.querySelector('.right-top-child-container')
 const rightBottom = document.querySelector('.right-bottom-child-container')
+let results = document.querySelector("#results");
+const rule = document.querySelector("#rule");
 
-submitBtn.addEventListener("click", function() {
-rightTop.style.display = "flex";
-rightBottom.style.display = "block";
+submitBtn.addEventListener("click", function () {
+
 });
+
+let cityNames = [];
+
+function cityNameButton() {
+    if (localStorage.getItem("cityName")) {
+        cityNames = JSON.parse(localStorage.getItem("cityName"))
+        resultsContainer.innerHTML = '<hr noshade id="rule">'
+        for (i = 0; i < cityNames.length; i++) {
+            resultsContainer.innerHTML += `<button class="results" id="results" type="text">${cityNames[i]}</button>`
+        }
+        let results = document.querySelectorAll(".results")
+        for (i = 0; i < results.length; i++) {
+            results[i].addEventListener("click", function () {
+                displayWeather(this.textContent)
+                rightTop.style.display = "flex";
+                rightBottom.style.display = "block";
+                results.style.display = "block";
+                rule.style.display = "block";
+            })
+        }
+    }
+}
+
+cityNameButton()
 
 function getWeather() {
     var cityName = searchText.value
     displayWeather(cityName);
+    rightTop.style.display = "flex";
+    rightBottom.style.display = "block";
+    results.style.display = "block";
+    rule.style.display = "block";
 }
 
 function displayWeather(cityName) {
@@ -30,6 +62,11 @@ function displayWeather(cityName) {
         })
         .then(function (currentWeather) {
             console.log(currentWeather)
+            if (cityNames.includes(currentWeather.name) === false && cityName.length > 0) {
+                cityNames.push(currentWeather.name)
+                localStorage.setItem("cityName", JSON.stringify(cityNames))
+                cityNameButton()
+            }
             let iconURL = `https://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png`;
             currentSection.innerHTML =
                 `<h2><span id="current-city">${currentWeather.name}</span>, <span id="current-date">${dayjs.unix(currentWeather.dt).format('MMMM D, YYYY')}</span> <span class="emoji">${parseWeatherEmoji(currentWeather.weather[0].icon)}</span></h2>
@@ -50,7 +87,7 @@ function displayWeather(cityName) {
                         let fiveIconURL3 = `https://openweathermap.org/img/w/${fiveDayWeather.list[24].weather[0].icon}.png`;
                         let fiveIconURL4 = `https://openweathermap.org/img/w/${fiveDayWeather.list[32].weather[0].icon}.png`;
                         fiveDaySection.innerHTML =
-                    `<section class="five-day-child-container">
+                            `<section class="five-day-child-container">
                         <h3>${dayjs(fiveDayWeather.list[0].dt_txt).format('MMMM D, YYYY')}</h3>
                         <p class="emoji">${parseWeatherEmoji(fiveDayWeather.list[0].weather[0].icon)}</p>
                         <p>Temp: ${fiveDayWeather.list[0].main.temp}</p>
@@ -127,27 +164,4 @@ function parseWeatherEmoji(weatherCode) {
     return emoji
 }
 
-// currentWeather.weather[0] can be {01d, 01n, 02d, 02n, etc.}
 
-// let emoji = currentWeather.weather[0];
-// if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "01d" || "01n") {
-//     emoji = "☀️";
-// }
-
-// else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "02d" || "02n") {
-//     return "🌤";
-// } else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "03d" || "03n") {
-//     return "☁️";
-// } else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "04d" || "04n") {
-//     return "☁️";
-// } else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "09d" || "09n") {
-//     return "🌧";
-// } else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "10d" || "10n") {
-//     return "🌧";
-// } else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "11d" || "11n") {
-//     return "⛈";
-// } else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "13d" || "13n") {
-//     return "❄️";
-// } else if (currentWeather.weather[0] || fiveDayWeather.list[i].weather[0] === "50d" || "50n") {
-//     return "💦";
-// }
