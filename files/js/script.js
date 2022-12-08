@@ -55,6 +55,10 @@ function displayWeather(cityName) {
     const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey + "&units=imperial";
     fetch(apiURL)
         .then(function (response) {
+            console.log(response.status);
+            if (response.status !== 200) {
+                alert("Please enter a valid city.");
+            }
             return response.json()
         })
         .then(function (currentWeather) {
