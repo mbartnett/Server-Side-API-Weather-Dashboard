@@ -64,6 +64,7 @@ p {
 .emoji {
     font-size: 56px;
     margin: 0;
+    text-align: center;
 }
 
 /* Form elements */
