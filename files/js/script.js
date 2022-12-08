@@ -14,10 +14,6 @@ let resultsContainer = document.querySelector(".left-results-container");
 const rule = document.querySelector("#rule");
 let cityNames = [];
 
-// Event listener for weather functions
-
-submitBtn.addEventListener('click', getWeather)
-
 // Function that creates a button and stores data for a queried city's name
 
 function cityNameButton() {
@@ -52,6 +48,8 @@ function getWeather() {
     results.style.display = "block";
     rule.style.display = "block";
 }
+
+submitBtn.addEventListener('click', getWeather)
 
 function displayWeather(cityName) {
     const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey + "&units=imperial";
