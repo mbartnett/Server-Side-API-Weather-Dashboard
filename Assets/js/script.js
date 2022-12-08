@@ -69,10 +69,11 @@ function displayWeather(cityName) {
             }
             let iconURL = `https://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png`;
             currentSection.innerHTML =
-                `<h2><span id="current-city">${currentWeather.name}</span>, <span id="current-date">${dayjs.unix(currentWeather.dt).format('MMMM D, YYYY')}</span> <span class="emoji">${parseWeatherEmoji(currentWeather.weather[0].icon)}</span></h2>
-            <h4>Temp: <span id="current-temp">${currentWeather.main.temp}</span></h4>
-            <h4>Wind: <span id="current-wind">${currentWeather.wind.speed} mph</span></h4>
-            <h4>Humidity: <span id="current-humidity">${currentWeather.main.humidity}</span></h4>`
+                `<h2><span id="current-city">${currentWeather.name}</span>, <span id="current-date">${dayjs.unix(currentWeather.dt).format('MMMM D, YYYY')}</span></h2>
+            <h4 style="font-size: 64px;><span class="emoji">${parseWeatherEmoji(currentWeather.weather[0].icon)}</span></h4>
+            <h4><b>Temp:</b> <span id="current-temp">${currentWeather.main.temp}</span></h4>
+            <h4><b>Wind:</b> <span id="current-wind">${currentWeather.wind.speed} mph</span></h4>
+            <h4><b>Humidity:</b> <span id="current-humidity">${currentWeather.main.humidity}</span></h4>`
             const fiveDayURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${currentWeather.coord.lat}&lon=${currentWeather.coord.lon}&appid=${apiKey}&units=imperial`
             fetch(fiveDayURL)
                 .then(function (response) {
@@ -88,39 +89,39 @@ function displayWeather(cityName) {
                         let fiveIconURL4 = `https://openweathermap.org/img/w/${fiveDayWeather.list[32].weather[0].icon}.png`;
                         fiveDaySection.innerHTML =
                             `<section class="five-day-child-container">
-                        <h3>${dayjs(fiveDayWeather.list[0].dt_txt).format('MMMM D, YYYY')}</h3>
+                        <h3>${dayjs(fiveDayWeather.list[0].dt_txt).format('MMM. D, YYYY')}</h3>
                         <p class="emoji">${parseWeatherEmoji(fiveDayWeather.list[0].weather[0].icon)}</p>
-                        <p>Temp: ${fiveDayWeather.list[0].main.temp}</p>
-                        <p>Wind: ${fiveDayWeather.list[0].wind.speed} mph</p>
-                        <p>Humidity: ${fiveDayWeather.list[0].main.humidity}</p>            
+                        <p><b>Temp:</b> ${fiveDayWeather.list[0].main.temp}</p>
+                        <p><b>Wind:</b> ${fiveDayWeather.list[0].wind.speed} mph</p>
+                        <p><b>Humidity:</b> ${fiveDayWeather.list[0].main.humidity}</p>            
                         </section>
                     <section class="five-day-child-container">
-                        <h3>${dayjs(fiveDayWeather.list[8].dt_txt).format('MMMM D, YYYY')}</h3>
+                        <h3>${dayjs(fiveDayWeather.list[8].dt_txt).format('MMM. D, YYYY')}</h3>
                         <p class="emoji">${parseWeatherEmoji(fiveDayWeather.list[8].weather[0].icon)}</p>
-                        <p>Temp: ${fiveDayWeather.list[8].main.temp}</p>
-                        <p>Wind: ${fiveDayWeather.list[8].wind.speed} mph</p>
-                        <p>Humidity: ${fiveDayWeather.list[8].main.humidity}</p>                  
+                        <p><b>Temp:</b> ${fiveDayWeather.list[8].main.temp}</p>
+                        <p><b>Wind:</b> ${fiveDayWeather.list[8].wind.speed} mph</p>
+                        <p><b>Humidity:</b> ${fiveDayWeather.list[8].main.humidity}</p>                  
                     </section>
                     <section class="five-day-child-container">
-                        <h3>${dayjs(fiveDayWeather.list[16].dt_txt).format('MMMM D, YYYY')}</h3>
+                        <h3>${dayjs(fiveDayWeather.list[16].dt_txt).format('MMM. D, YYYY')}</h3>
                         <p class="emoji">${parseWeatherEmoji(fiveDayWeather.list[16].weather[0].icon)}</p>
-                        <p>Temp: ${fiveDayWeather.list[16].main.temp}</p>
-                        <p>Wind: ${fiveDayWeather.list[16].wind.speed} mph</p>
-                        <p>Humidity: ${fiveDayWeather.list[16].main.humidity}</p>                  
+                        <p><b>Temp:</b> ${fiveDayWeather.list[16].main.temp}</p>
+                        <p><b>Wind:</b> ${fiveDayWeather.list[16].wind.speed} mph</p>
+                        <p><b>Humidity:</b> ${fiveDayWeather.list[16].main.humidity}</p>                  
                     </section>
                     <section class="five-day-child-container">
-                        <h3>${dayjs(fiveDayWeather.list[24].dt_txt).format('MMMM D, YYYY')}</h3>
+                        <h3>${dayjs(fiveDayWeather.list[24].dt_txt).format('MMM. D, YYYY')}</h3>
                         <p class="emoji">${parseWeatherEmoji(fiveDayWeather.list[24].weather[0].icon)}</p>
-                        <p>Temp: ${fiveDayWeather.list[24].main.temp}</p>
-                        <p>Wind: ${fiveDayWeather.list[24].wind.speed} mph</p>
-                        <p>Humidity: ${fiveDayWeather.list[24].main.humidity}</p>                 
+                        <p><b>Temp:</b> ${fiveDayWeather.list[24].main.temp}</p>
+                        <p><b>Wind:</b> ${fiveDayWeather.list[24].wind.speed} mph</p>
+                        <p><b>Humidity:</b> ${fiveDayWeather.list[24].main.humidity}</p>                 
                     </section>
                     <section class="five-day-child-container">
-                        <h3>${dayjs(fiveDayWeather.list[32].dt_txt).format('MMMM D, YYYY')}</h3>
+                        <h3>${dayjs(fiveDayWeather.list[32].dt_txt).format('MMM. D, YYYY')}</h3>
                         <p class="emoji">${parseWeatherEmoji(fiveDayWeather.list[32].weather[0].icon)}</p>
-                        <p>Temp: ${fiveDayWeather.list[32].main.temp}</p>
-                        <p>Wind: ${fiveDayWeather.list[32].wind.speed} mph</p>
-                        <p>Humidity: ${fiveDayWeather.list[32].main.humidity}</p>                    
+                        <p><b>Temp:</b> ${fiveDayWeather.list[32].main.temp}</p>
+                        <p><b>Wind:</b> ${fiveDayWeather.list[32].wind.speed} mph</p>
+                        <p><b>Humidity:</b> ${fiveDayWeather.list[32].main.humidity}</p>                    
                     </section>`
                     }
                 })
