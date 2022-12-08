@@ -1,6 +1,10 @@
 // API key
 const apiKey = '7e04a867561611c9d92b2e344ce5ac39';
 
+// Event listener for weather functions
+
+submitBtn.addEventListener('click', getWeather)
+
 // Variables
 
 const submitBtn = document.getElementById('submit')
@@ -13,10 +17,6 @@ let results = document.querySelector("#results");
 let resultsContainer = document.querySelector(".left-results-container");
 const rule = document.querySelector("#rule");
 let cityNames = [];
-
-// Event listener for weather functions
-
-submitBtn.addEventListener('click', getWeather)
 
 // Function that creates a button and stores data for a queried city's name
 
