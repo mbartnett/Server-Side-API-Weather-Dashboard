@@ -1,27 +1,24 @@
-// API stuff
-
+// API key
 const apiKey = '7e04a867561611c9d92b2e344ce5ac39';
 
-const submitBtn = document.getElementById('submit')
+// Variables
 
+const submitBtn = document.getElementById('submit')
 let currentSection = document.getElementById('current-section');
 let fiveDaySection = document.getElementById('five-day-section');
 const searchText = document.getElementById('search-text');
-
-submitBtn.addEventListener('click', getWeather)
-
-let resultsContainer = document.querySelector(".left-results-container");
-
 const rightTop = document.querySelector('.right-top-child-container')
 const rightBottom = document.querySelector('.right-bottom-child-container')
 let results = document.querySelector("#results");
+let resultsContainer = document.querySelector(".left-results-container");
 const rule = document.querySelector("#rule");
-
-submitBtn.addEventListener("click", function () {
-
-});
-
 let cityNames = [];
+
+// Event listener for weather functions
+
+submitBtn.addEventListener('click', getWeather)
+
+// Function that creates a button and stores data for a queried city's name
 
 function cityNameButton() {
     if (localStorage.getItem("cityName")) {
@@ -45,6 +42,8 @@ function cityNameButton() {
 
 cityNameButton()
 
+// Functions for fetching and displaying a city's current weather and five day weather forecast
+
 function getWeather() {
     var cityName = searchText.value
     displayWeather(cityName);
@@ -67,7 +66,6 @@ function displayWeather(cityName) {
                 localStorage.setItem("cityName", JSON.stringify(cityNames))
                 cityNameButton()
             }
-            let iconURL = `https://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png`;
             currentSection.innerHTML =
                 `<h2><span id="current-city">${currentWeather.name}</span>, <span id="current-date">${dayjs.unix(currentWeather.dt).format('MMMM D, YYYY')}</span></h2>
             <h4 style="font-size: 64px;><span class="emoji">${parseWeatherEmoji(currentWeather.weather[0].icon)}</span></h4>
@@ -82,11 +80,6 @@ function displayWeather(cityName) {
                 .then(function (fiveDayWeather) {
                     for (i = 2; i < fiveDayWeather.list.length; i = i + 8) {
                         console.log(fiveDayWeather.list[i])
-                        let fiveIconURL0 = `https://openweathermap.org/img/w/${fiveDayWeather.list[0].weather[0].icon}.png`;
-                        let fiveIconURL1 = `https://openweathermap.org/img/w/${fiveDayWeather.list[8].weather[0].icon}.png`;
-                        let fiveIconURL2 = `https://openweathermap.org/img/w/${fiveDayWeather.list[16].weather[0].icon}.png`;
-                        let fiveIconURL3 = `https://openweathermap.org/img/w/${fiveDayWeather.list[24].weather[0].icon}.png`;
-                        let fiveIconURL4 = `https://openweathermap.org/img/w/${fiveDayWeather.list[32].weather[0].icon}.png`;
                         fiveDaySection.innerHTML =
                             `<section class="five-day-child-container">
                         <h3>${dayjs(fiveDayWeather.list[0].dt_txt).format('MMM. D, YYYY')}</h3>
@@ -128,6 +121,8 @@ function displayWeather(cityName) {
         })
 }
 
+// Function that parses weather icons into emojis
+
 function parseWeatherEmoji(weatherCode) {
     weatherCode = parseInt(weatherCode)
     let emoji;
@@ -164,5 +159,3 @@ function parseWeatherEmoji(weatherCode) {
     }
     return emoji
 }
-
-

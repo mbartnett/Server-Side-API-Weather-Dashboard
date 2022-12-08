@@ -15,7 +15,7 @@ main {
 
 header {
     background-color: #6991e3;
-    /*background-image: linear-gradient(to right, #6991e3 , #261360);*/
+    /*background-image: linear-gradient(to right, #6991e3 , #1862F5);*/
     color: white;
     text-align: center;
 }
@@ -85,6 +85,15 @@ button {
     margin: 10px;
 }
 
+#submit {
+    font-weight: 600;
+}
+
+#submit:hover {
+    /*background-color: #3377FF;*/
+    box-shadow: 2.5px 2.5px 2.5px #aeaeae;
+}
+
 button.results {
     width: 90%;
     background-color:#aeaeae;
@@ -111,7 +120,6 @@ button.results {
 }
 
 .left-results-container {
-    /*border-top: 1px #aeaeae solid;*/
     border-width: 90%;
 }
 
@@ -149,6 +157,7 @@ button.results {
     flex-direction:column;
     justify-content: center;
     background-color: #6991e3;
+    /*background-image: linear-gradient(to bottom, #6991e3 , #3377FF5);*/
     color: white;   
     width: 19%; 
     height: 275px;
