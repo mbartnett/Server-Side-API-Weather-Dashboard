@@ -1,5 +1,5 @@
 # Server-Side-API-Weather-Dashboard
-A weather dashboard that will run in the browser and feature dynamically updated HTML and CSS
+A weather dashboard that will run in the browser and feature dynamically updated HTML and CSS using JavaScript and server-side APIs
 
 ## Links
 [**Week Six Challenge**](https://mbartnett.github.io/Server-Side-API-Weather-Dashboard/)<br>
