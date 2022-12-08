@@ -2,7 +2,7 @@
 A weather dashboard that will run in the browser and feature dynamically updated HTML and CSS
 
 ## Links
-[**Week Six Challenge**](https://mbartnett.github.io/Server-Side-API-Weather-Dashboard/)
+[**Week Six Challenge**](https://mbartnett.github.io/Server-Side-API-Weather-Dashboard/)<br>
 [**Week Six Challenge Repo**](https://github.com/mbartnett/Server-Side-API-Weather-Dashboard)
 
 ## Screengrab
